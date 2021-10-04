@@ -29,7 +29,7 @@ module.exports = {
   ignorePatterns: ["node_modules/", "!.eslintrc.js", "!.prettierrc.js"],
   overrides: [
     {
-      files: ["src/pages/**/*.tsx"],
+      files: ["src/pages/**/*.tsx", "src/pages/**/*.ts"],
       rules: {
         "import/no-default-export": "off",
       },
