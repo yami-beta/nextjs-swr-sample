@@ -20,6 +20,10 @@ export const getTodos = () => {
     .filter((todo): todo is Todo => !!todo);
 };
 
+export const getTodo = (todoId: string) => {
+  return todoState.entities[todoId];
+};
+
 export const createTodo = (todo: Pick<Todo, "text">) => {
   const id = `${todoState.ids.length}`;
 
