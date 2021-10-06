@@ -10,8 +10,19 @@ type TodoState = {
 };
 
 const todoState: TodoState = {
-  ids: [],
-  entities: {},
+  ids: ["todo0", "todo1"],
+  entities: {
+    todo0: {
+      id: "todo0",
+      text: "todo 0",
+      done: false,
+    },
+    todo1: {
+      id: "todo1",
+      text: "todo 1",
+      done: true,
+    },
+  },
 };
 
 export const getTodos = () => {
@@ -25,7 +36,7 @@ export const getTodo = (todoId: string) => {
 };
 
 export const createTodo = (todo: Pick<Todo, "text">) => {
-  const id = `${todoState.ids.length}`;
+  const id = `todo${todoState.ids.length}`;
 
   todoState.ids = [...todoState.ids, id];
 
