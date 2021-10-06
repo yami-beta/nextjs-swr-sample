@@ -1,28 +1,14 @@
+import { Heading } from "@chakra-ui/react";
 import { NextPage } from "next";
-import Link from "next/link";
-import { useTodoList } from "../features/todo/todoListHook";
+import { TodoList } from "../features/todo/TodoList";
 
 type IndexPageProps = {};
 
 const IndexPage: NextPage<IndexPageProps> = () => {
-  const { todoList } = useTodoList();
-
   return (
     <div>
-      <h1>Index</h1>
-      {todoList && (
-        <ul>
-          {todoList.map((todo) => {
-            return (
-              <li key={todo.id}>
-                <Link href={`/todos/${todo.id}`}>
-                  <a>{todo.text}</a>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      )}
+      <Heading>Index</Heading>
+      <TodoList />
     </div>
   );
 };
